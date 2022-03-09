@@ -2,6 +2,8 @@
 #include <stdexcept>
 using namespace std;
 #include "mat.hpp"
+#include <vector>
+
 namespace ariel{
     string mat(int col, int row, char a , char b){
         if (col%2 == 0 || row%2 == 0){
@@ -14,7 +16,7 @@ namespace ariel{
             throw invalid_argument{"Invalid input of char"};
         }
         string mat_str;
-        char mat_num[row][col];
+        vector<vector<char>> mat_num(row, vector<char>(col));
         int mat =0;
         if (col<row){
              mat = col / 2 +1;
